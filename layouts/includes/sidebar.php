@@ -9,12 +9,12 @@
             </li>
             <li class="nav-title">Theme</li>
             <li class="nav-item">
-              <a class="nav-link" href="colors.html">
+              <a class="nav-link" href="/admin/kategori">
                 <i class="nav-icon icon-drop"></i> Kategori</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="typography.html">
-                <i class="nav-icon icon-pencil"></i> Typography</a>
+              <a class="nav-link" href="/admin/artikel">
+                <i class="nav-icon icon-pencil"></i> Artikel</a>
             </li>
             <li class="nav-title">Components</li>
             <li class="nav-item nav-dropdown">

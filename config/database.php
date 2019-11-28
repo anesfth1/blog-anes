@@ -18,4 +18,8 @@ class Database {
     }
 }
 $db = new Database();
+// Kategori
+include 'kategori.php';
+// Artikel
+include 'artikel.php';
 ?>

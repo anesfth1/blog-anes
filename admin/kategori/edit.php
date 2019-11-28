@@ -1,37 +1,30 @@
-  <?php
-  session_start();
-  if (!$_SESSION['login']) {
-    echo "<script type='text/javascript'>
-    alert('Maaf Anda Harus Login Terlebih Dahulu!');window.location='index.php'</script>";
-  } else {
-    include ('../config/database.php');
-    $user = new Database();
-    $user = mysqli_query($user->koneksi,
-    "SELECT * FROM users WHERE password='$_SESSION[login]'");
-    // var_dump($_SESSION['login']);
-    $user = mysqli_fetch_array($user);
-    ?>
-  <!-- Head -->
-  <?php include('../layouts/includes/head.php'); ?>
-  <!-- End Head -->
-  <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-  <!-- Header -->
-  <?php include('../layouts/includes/navbar.php'); ?>
-  <!-- End Header -->
-    <div class="app-body">
-    <!-- Sidebar -->
-    <?php include('../layouts/includes/sidebar.php'); ?>
-    <!-- End Sidebar -->
-      <main class="main">Hello World
-      </main>
+<?php foreach($kategori->edit($data['id']) as $data) {
+  $id= $data['id'];
+  $nama = $data['nama'];
+}
+?>
+<div class="modal fade kategori-<?php echo $data['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <from action="/admin/kategori/proses.php?aksi=update" method="POST">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Edit Kategori</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" name="id" value="<?php echo $id; ?>">
+          <div class="from-group">
+            <label>Nama Kategori</label>
+            <input type="text" nama="nama" value="<?php echo $data['$data']; ?>" class="from-control" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="submit" name="save" class="btn btn-block btn-primary">Save</button>
+        </div>
+      </from>
     </div>
-  <!-- Footer -->
-<?php include('../layouts/includes/footer.php'); ?>
-  <!-- End Footer -->
-    <!-- CoreUI and necessary plugins-->
-    <!-- Scripts-->
-    <?php include('../layouts/includes/scripts.php'); ?>
-    <!-- End Scripts -->
-  </body>
-</html>
-<?php } ?>
+  </div>
+</div>

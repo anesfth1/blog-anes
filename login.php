@@ -1,6 +1,6 @@
 <?php 
 session_start();
-include 'config/database.php';
+include ('../blog-anes/config/database.php');
 if (isset($_POST['save'])) {
   $db = new Database();
   $email = $_POST['email'];
@@ -10,12 +10,12 @@ if (isset($_POST['save'])) {
     "SELECT * FROM users WHERE email='$email' and password='$pass'"
   );
 $row = mysqli_num_rows($result);
- var_dump($row);
+//  var_dump($row);
 if ($row > 0) {
   $_SESSION['login'] = $pass;
   echo "<script type='text/javascript'>
   alert('Login Berhasil!');
-  window.location = 'admin/index.php'
+  window.location = '/admin/index.php'
   </script>";
   // ;
 } else {
@@ -110,7 +110,7 @@ if ($row > 0) {
             <div class="card text-white bg-primary py-5 d-md-down-none" style="width:44%">
               <div class="card-body text-center">
                 <div>
-                    <img src="/assets/admin-template/img/sf.png" height="255px">
+                    <img src="/assets/admin-template/img/sf.png" height="140px">
                 </div>
               </div>
             </div>
