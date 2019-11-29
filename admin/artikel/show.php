@@ -72,7 +72,7 @@ if (!$_SESSION['login']) {
                                     <p align="right"> <i class="icons cui-note"></i> Dibuat : <?php echo date('d F Y', strtotime($data['tgl'])) ?></p>
                                     <center>
                                         <h2><label class="cui-date"><?php echo $judul ?></label></h2>
-                                        <img src="/admin/artikel/img/<?php echo $foto; ?>" alt="" style="width:600px; height:350px;">
+                                        <img src="/admin/artikel/img/<?php echo $foto; ?>" alt="" style="width:500px; height:400px;">
                                     </center>
                                     <br>
                                     <p class="cui-date"><?php echo $data['konten']; ?></p>
